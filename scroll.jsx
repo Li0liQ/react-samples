@@ -8,7 +8,7 @@
       return {
         recordHeight: recordHeight,
         posY: 0,
-        searchCriteria: {}
+        filteredRecordList: this.props.recordList
       };
     },
     onScroll: function(){
@@ -16,13 +16,7 @@
         posY: this.refs.scrollable.getDOMNode().scrollTop
       });
     },
-    onSearchChange: function(criteria){
-      this.setState({
-        searchCriteria: criteria
-      });
-    },
-    render: function() {
-      var c = this.state.searchCriteria;
+    onSearchChange: function(c){
       var filteredRecordList = this.props.recordList.filter(function(item){
         return ((c.id == null || item.id == c.id)
           && (c.firstName == null || item.firstName.indexOf(c.firstName) != -1)
@@ -32,12 +26,17 @@
           );
       });
 
+      this.setState({
+        filteredRecordList: filteredRecordList
+      });
+    },
+    render: function() {
       return (
         <div>
           <GridToolbar onSearchChange={this.onSearchChange}/>
           <div style={{height:this.props.height + 'px', overflow:'auto'}}  ref="scrollable" onScroll={this.onScroll}>
             <GridBody
-              recordList={filteredRecordList}
+              recordList={this.state.filteredRecordList}
               recordHeight={this.state.recordHeight}
               posY={this.state.posY}
               height={this.props.height} />
