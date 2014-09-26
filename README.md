@@ -1,4 +1,4 @@
 react-samples
 =============
 
-See http://li0liq.github.io/react-samples/ for presentation slides.
+See http://www.slideshare.net/AlexeyShpakov/react-39506327 for presentation slides.
