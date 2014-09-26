@@ -1,0 +1,82 @@
+body {
+  background: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  padding: 30px;
+}
+.number {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 100px;
+  margin: -50px 0 0 -150px;
+  text-align: center;
+}
+.number input {
+  height: 100px;
+  width: 100px;
+  font-size: 50px;
+}
+.number .textBox {
+  width: 100px;
+  height: 100px;
+  font-size: 60px;
+  display: inline-block;
+}
+.friendList, .messageList {
+  float: left;
+}
+.friendList {
+  width: 200px;
+}
+.friendList .friend {
+  padding: 5px;
+  cursor: pointer;
+}
+.friendList .friend.selected {
+  background-color: #b4d7ff;
+}
+.messageList {
+  padding: 0 20px 20px;
+  width: 400px;
+}
+.messageList .messages-container {
+  height: 250px;
+  overflow: auto;
+}
+.messageList .msg {
+  padding: 5px;
+  border: 2px dotted #b4d7ff;
+  margin: 0 5px 5px;
+}
+table.scroll-table {
+  min-width: 900px;
+  table-layout: fixed;
+}
+.scroll-table tbody tr:nth-child(even) {
+  background-color: #cbe2fc;
+}
+.scroll-table td {
+  padding: 0 5px;
+}
+.scroll-table td input[type="text"] {
+  margin: 0 -10px;
+}
+table.scroll-table td:nth-child(1), table.scroll-table td:nth-child(1) input {
+  width: 60px;
+}
+table.scroll-table td:nth-child(2), table.scroll-table td:nth-child(2) input {
+  width: 150px;
+}
+table.scroll-table td:nth-child(3), table.scroll-table td:nth-child(3) input {
+  width: 120px;
+}
+table.scroll-table td:nth-child(4), table.scroll-table td:nth-child(4) input {
+  width: 320px;
+}
+table.scroll-table td:nth-child(5), table.scroll-table td:nth-child(5) input {
+  width: 100px;
+}
