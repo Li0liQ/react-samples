@@ -3,7 +3,6 @@
   var Grid = React.createClass({
     getInitialState: function(){
       var recordHeight = 25;
-      var recordsPerBody = Math.floor((this.props.height - 2) / recordHeight);
 
       return {
         recordHeight: recordHeight,
@@ -19,10 +18,10 @@
     onSearchChange: function(c){
       var filteredRecordList = this.props.recordList.filter(function(item){
         return ((c.id == null || item.id == c.id)
-          && (c.firstName == null || item.firstName.indexOf(c.firstName) != -1)
-          && (c.lastName == null || item.lastName.indexOf(c.lastName) != -1)
-          && (c.country == null || item.country.indexOf(c.country) != -1)
-          && (c.color == null || item.color.indexOf(c.color) != -1)
+          && (c.firstName == null || item.firstName.toLowerCase().indexOf(c.firstName.toLowerCase()) != -1)
+          && (c.lastName == null || item.lastName.toLowerCase().indexOf(c.lastName.toLowerCase()) != -1)
+          && (c.country == null || item.country.toLowerCase().indexOf(c.country.toLowerCase()) != -1)
+          && (c.color == null || item.color.toLowerCase().indexOf(c.color.toLowerCase()) != -1)
           );
       });
 
@@ -54,7 +53,7 @@
         firstName: null,
         lastName: null,
         country: null,
-        color: null,
+        color: null
       };
     },
     onClick: function(){
@@ -110,7 +109,6 @@
               <td>{item.lastName}</td>
               <td>{item.country}</td>
               <td>{item.color}</td>
-              <td></td>
             </tr>);
         });
 
@@ -163,7 +161,7 @@
         firstName: firstNameList[Math.floor(Math.random() * firstNameList.length)],
         lastName: lastNameList[Math.floor(Math.random() * lastNameList.length)],
         country: countryList[Math.floor(Math.random() * countryList.length)],
-        color: colorList[Math.floor(Math.random() * colorList.length)],
+        color: colorList[Math.floor(Math.random() * colorList.length)]
       });
     }
 
