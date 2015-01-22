@@ -1,4 +1,3 @@
-/** @jsx React.DOM */
 (function(){
   var Grid = React.createClass({
     getInitialState: function(){
@@ -12,6 +11,7 @@
     },
     onScroll: function(){
       this.setState({
+        /* Using refs here to get corresponding DOM element. */
         posY: this.refs.scrollable.getDOMNode().scrollTop
       });
     },
@@ -31,6 +31,7 @@
     },
     render: function() {
       return (
+        /* Using refs here to mark a DOM element. */
         <div>
           <GridToolbar onSearchChange={this.onSearchChange}/>
           <div style={{height:this.props.height + 'px', overflow:'auto'}}  ref="scrollable" onScroll={this.onScroll}>
