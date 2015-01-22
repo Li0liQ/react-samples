@@ -102,7 +102,7 @@
 
       var recordList = (this.props.recordList || [])
         .slice(start, end)
-        .map(function(item, index){
+        .map(function(item){
           return (<tr style={{height:itemHeight + 'px'}}>
               <td>{item.id}</td>
               <td>{item.firstName}</td>
@@ -142,7 +142,7 @@
   ulItemList.push('</ul>')
   document.getElementById('react').innerHTML = ulItemList.join('');
   /*/
-  React.renderComponent(
+  React.render(
     <Grid height="500" recordList={items}/>,
     document.getElementById('react')
   );
